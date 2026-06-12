@@ -1,0 +1,88 @@
+<!--辅导员换班申请页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">换班申请</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 张三的换班申请 -->
+  <view class="request-card" wx:if="{{mockRequest}}">
+    <view class="request-header">
+      <view class="request-avatar">
+        <text class="avatar-text">{{mockRequest.applicantName.charAt(0)}}</text>
+      </view>
+      <view class="request-info">
+        <text class="request-name">{{mockRequest.applicantName}}</text>
+        <text class="request-id">{{mockRequest.applicantId}}</text>
+        <text class="request-college">所在单位：{{mockRequest.college}}</text>
+      </view>
+    </view>
+    <view class="request-duty">
+      <text class="section-title">申请换班信息</text>
+      <view class="duty-info-item">
+        <text class="info-label">值班日期：</text>
+        <text class="info-value">{{mockRequest.dutyDate}}（{{mockRequest.weekDay}}）</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班开始时间：</text>
+        <text class="info-value">{{mockRequest.startTime}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班结束时间：</text>
+        <text class="info-value">{{mockRequest.endTime}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班校区：</text>
+        <text class="info-value">{{mockRequest.campus}}</text>
+      </view>
+    </view>
+    <view class="request-footer">
+      <view class="btn-agree {{mockRequest.status === 'agreed' ? 'btn-agreed' : ''}}" bindtap="agreeExchange">
+        {{mockRequest.status === 'agreed' ? '已同意' : '同意换班'}}
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{counselorList.length === 0 && !mockRequest}}">
+    <view class="empty-icon-wrap">
+      <view class="empty-icon">
+        <view class="icon-letter"></view>
+        <view class="icon-email"></view>
+        <view class="icon-dot"></view>
+        <view class="icon-line"></view>
+      </view>
+    </view>
+    <text class="empty-text">暂无人员向你申请</text>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="tab-bar">
+    <view class="tab-bar-item" bindtap="goToDuty">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📅</text>
+      </view>
+      <text class="tab-bar-text">值班安排</text>
+    </view>
+    <view class="tab-bar-item active" bindtap="goToExchange">
+      <view class="tab-bar-icon-wrap active">
+        <text class="tab-bar-icon">📋</text>
+      </view>
+      <text class="tab-bar-text">换班申请</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToMore">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">▦</text>
+      </view>
+      <text class="tab-bar-text">更多功能</text>
+    </view>
+  </view>
+</view>

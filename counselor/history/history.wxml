@@ -1,0 +1,49 @@
+<!--辅导员值班历史页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">值班安排记录</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 时间筛选 -->
+  <view class="filter-bar">
+    <view class="filter-select" bindtap="showTimePicker">
+      <text class="filter-text">{{selectedTime}}</text>
+      <text class="filter-arrow">▼</text>
+    </view>
+  </view>
+
+  <!-- 历史列表 -->
+  <view class="history-list">
+    <view class="history-card" wx:for="{{historyList}}" wx:key="id">
+      <view class="history-date-header">
+        <text class="history-date">{{item.dutyDate}}（{{item.weekDay}}）</text>
+        <text class="history-type">{{item.type}}</text>
+      </view>
+      <view class="history-info-item">
+        <text class="info-label">值班开始时间：</text>
+        <text class="info-value">{{item.startTime}}</text>
+      </view>
+      <view class="history-info-item">
+        <text class="info-label">值班结束时间：</text>
+        <text class="info-value">{{item.endTime}}</text>
+      </view>
+      <view class="history-info-item">
+        <text class="info-label">值班校区：</text>
+        <text class="info-value">{{item.campus}}</text>
+      </view>
+      <view class="history-info-item">
+        <text class="info-label">值班住宿地址：</text>
+        <text class="info-value">{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+</view>

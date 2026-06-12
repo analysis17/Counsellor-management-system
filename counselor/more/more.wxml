@@ -1,0 +1,56 @@
+<!--辅导员更多功能页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">更多功能</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="function-list">
+    <view class="function-item" bindtap="goToRole">
+      <view class="function-icon-wrap orange">
+        <text class="function-icon">👤</text>
+      </view>
+      <text class="function-title">角色切换</text>
+      <view class="function-arrow">›</view>
+    </view>
+
+    <view class="function-item" bindtap="goToHistory">
+      <view class="function-icon-wrap green">
+        <text class="function-icon">⏰</text>
+      </view>
+      <text class="function-title">值班安排记录</text>
+      <view class="function-arrow">›</view>
+    </view>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="tab-bar">
+    <view class="tab-bar-item" bindtap="goToDuty">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📅</text>
+      </view>
+      <text class="tab-bar-text">值班安排</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToExchange">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📋</text>
+      </view>
+      <text class="tab-bar-text">换班申请</text>
+    </view>
+    <view class="tab-bar-item active" bindtap="goToMore">
+      <view class="tab-bar-icon-wrap active">
+        <text class="tab-bar-icon">▦</text>
+      </view>
+      <text class="tab-bar-text">更多功能</text>
+    </view>
+  </view>
+</view>

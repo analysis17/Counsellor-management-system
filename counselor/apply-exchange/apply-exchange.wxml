@@ -1,0 +1,60 @@
+<!--可以申请的换班页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">可以申请的换班</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 辅导员信息卡片 -->
+  <view class="info-card">
+    <view class="counselor-header">
+      <view class="counselor-avatar">
+        <text class="avatar-text">{{targetInfo.name && targetInfo.name.charAt(0) || '李'}}</text>
+      </view>
+      <view class="counselor-info">
+        <text class="counselor-name">{{targetInfo.name || '李明'}}</text>
+        <text class="counselor-id">{{targetInfo.userId || '2025030840'}}</text>
+        <text class="counselor-college">所在单位：{{targetInfo.college || 'A学院'}}</text>
+      </view>
+      <view class="phone-icon-wrap" bindtap="callPhone">
+        <text class="phone-icon">☎</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 值班信息卡片 -->
+  <view class="duty-card">
+    <text class="card-title">值班信息</text>
+    <view class="duty-info-item">
+      <text class="info-label">值班日期：</text>
+      <text class="info-value">{{targetInfo.dutyDate}}（{{targetInfo.weekDay}}）</text>
+    </view>
+    <view class="duty-info-item">
+      <text class="info-label">值班开始时间：</text>
+      <text class="info-value">{{targetInfo.startTime}}</text>
+    </view>
+    <view class="duty-info-item">
+      <text class="info-label">值班结束时间：</text>
+      <text class="info-value">{{targetInfo.endTime}}</text>
+    </view>
+    <view class="duty-info-item">
+      <text class="info-label">值班校区：</text>
+      <text class="info-value">{{targetInfo.campus}}</text>
+    </view>
+    <view class="duty-info-item">
+      <text class="info-label">值班住宿地址：</text>
+      <text class="info-value">{{targetInfo.address}}</text>
+    </view>
+  </view>
+
+  <!-- 申请换班按钮 -->
+  <view class="bottom-btn" bindtap="submitApply">申请换班</view>
+</view>
