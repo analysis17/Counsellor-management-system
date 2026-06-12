@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/counselor/duty/duty",
+    "pages/counselor/exchange/exchange",
+    "pages/counselor/apply-exchange/apply-exchange",
+    "pages/counselor/more/more",
+    "pages/counselor/history/history",
+    "pages/counselor/role/role",
+    "pages/college/duty/duty",
+    "pages/college/more/more",
+    "pages/college/role/role",
+    "pages/admin/duty/duty",
+    "pages/admin/assist/assist",
+    "pages/admin/more/more",
+    "pages/admin/history/history",
+    "pages/admin/role/role"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1890ff",
+    "navigationBarTitleText": "辅导员值班系统",
+    "navigationBarTextStyle": "white"
+  },
+
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

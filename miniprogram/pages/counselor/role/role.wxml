@@ -1,0 +1,39 @@
+<!--辅导员角色切换页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">角色切换</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 角色列表 -->
+  <view class="role-list">
+    <view class="role-item" bindtap="selectRole" data-role="counselor">
+      <view class="radio-wrap {{currentRole === 'counselor' ? 'selected' : ''}}">
+        <view class="radio-inner" wx:if="{{currentRole === 'counselor'}}"></view>
+      </view>
+      <text class="role-name">发展辅导员角色</text>
+    </view>
+
+    <view class="role-item" bindtap="selectRole" data-role="college">
+      <view class="radio-wrap {{currentRole === 'college' ? 'selected' : ''}}">
+        <view class="radio-inner" wx:if="{{currentRole === 'college'}}"></view>
+      </view>
+      <text class="role-name">发展学院角色</text>
+    </view>
+
+    <view class="role-item" bindtap="selectRole" data-role="admin">
+      <view class="radio-wrap {{currentRole === 'admin' ? 'selected' : ''}}">
+        <view class="radio-inner" wx:if="{{currentRole === 'admin'}}"></view>
+      </view>
+      <text class="role-name">发展管理员角色</text>
+    </view>
+  </view>
+</view>

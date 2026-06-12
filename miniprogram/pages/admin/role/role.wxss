@@ -1,0 +1,79 @@
+/* 管理员角色切换页面样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* 顶部导航 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 30rpx;
+  background-color: #fff;
+}
+
+.header-left, .header-right {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-back, .header-close {
+  font-size: 48rpx;
+  color: #333;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 角色列表 */
+.role-list {
+  background-color: #fff;
+  margin: 30rpx;
+  border-radius: 16rpx;
+  padding: 10rpx 0;
+}
+
+.role-item {
+  display: flex;
+  align-items: center;
+  padding: 28rpx 30rpx;
+}
+
+.role-radio {
+  width: 36rpx;
+  height: 36rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.role-radio.checked {
+  border-color: #B81F24;
+}
+
+.radio-inner {
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #B81F24;
+  border-radius: 50%;
+}
+
+.role-text {
+  font-size: 30rpx;
+  color: #333;
+}

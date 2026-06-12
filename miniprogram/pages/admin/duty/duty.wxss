@@ -1,0 +1,297 @@
+/* 管理员值班情况页面样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 140rpx;
+}
+
+/* 顶部导航 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 30rpx;
+  background-color: #fff;
+}
+
+.header-left, .header-right {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-back-icon, .header-close-icon {
+  font-size: 48rpx;
+  color: #333;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 日期选择栏 */
+.date-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.date-arrow {
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-icon {
+  font-size: 40rpx;
+  color: #1890ff;
+}
+
+.date-text {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 值班列表 */
+.duty-list {
+  padding: 30rpx;
+}
+
+/* 校区标题 */
+.campus-header {
+  position: relative;
+  margin-bottom: 24rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.campus-map-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200rpx;
+  height: 120rpx;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cpath fill='%23f0f0f0' d='M0 0h200v120H0z'/%3E%3Cpath stroke='%23ccc' stroke-width='1' fill='none' d='M20 20h160M20 60h160M20 100h160M20 20v80M100 20v80M180 20v80'/%3E%3Ccircle cx='150' cy='50' r='6' fill='%231890ff'/%3E%3C/svg%3E") no-repeat right top;
+  background-size: contain;
+}
+
+.campus-info {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.campus-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  margin-right: 12rpx;
+}
+
+.campus-count {
+  font-size: 26rpx;
+  color: #B81F24;
+  font-weight: 600;
+}
+
+/* 辅导员卡片 */
+.counselor-card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+}
+
+.counselor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.counselor-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  background-color: #B81F24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.avatar-text {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.counselor-info {
+  flex: 1;
+}
+
+.counselor-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.counselor-id {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.phone-icon-wrap {
+  width: 56rpx;
+  height: 56rpx;
+  background-color: #07C160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-icon {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+/* 值班详情 */
+.duty-details {
+  padding-left: 108rpx;
+}
+
+.duty-detail-item {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: #999;
+  width: 180rpx;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  font-size: 24rpx;
+  color: #333;
+  flex: 1;
+  word-break: break-all;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200rpx 0;
+}
+
+.empty-icon-wrap {
+  width: 180rpx;
+  height: 180rpx;
+  background-color: #B81F24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.empty-icon-wrap::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200rpx;
+  height: 140rpx;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+}
+
+.empty-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 80rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 底部导航 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 0 60rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.tab-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-bar-icon-wrap {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8rpx;
+}
+
+.tab-bar-icon-wrap.active {
+  background-color: #B81F24;
+  border-radius: 12rpx;
+}
+
+.tab-bar-icon {
+  font-size: 32rpx;
+}
+
+.tab-bar-icon-wrap.active .tab-bar-icon {
+  color: #fff;
+}
+
+.tab-bar-text {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.tab-bar-item.active .tab-bar-text {
+  color: #B81F24;
+}

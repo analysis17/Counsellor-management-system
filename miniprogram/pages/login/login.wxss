@@ -1,0 +1,140 @@
+/* 登录页面样式 */
+.container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #B81F24 0%, #8B0000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 40rpx;
+}
+
+/* Logo区域 */
+.logo-section {
+  text-align: center;
+  margin-bottom: 80rpx;
+}
+
+.logo {
+  width: 160rpx;
+  height: 160rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 30rpx;
+}
+
+.logo-icon {
+  font-size: 80rpx;
+}
+
+.logo-title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10rpx;
+}
+
+.logo-subtitle {
+  display: block;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 表单区域 */
+.form-section {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx;
+  box-shadow: 0 10rpx 40rpx rgba(0, 0, 0, 0.2);
+}
+
+.form-item {
+  margin-bottom: 30rpx;
+}
+
+.form-label {
+  display: block;
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 12rpx;
+}
+
+.form-input {
+  width: 100%;
+  height: 80rpx;
+  background-color: #f5f5f5;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+/* 角色选择 */
+.role-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.role-item {
+  flex: 1;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 12rpx;
+  margin-right: 12rpx;
+  border: 2rpx solid transparent;
+}
+
+.role-item:last-child {
+  margin-right: 0;
+}
+
+.role-item.active {
+  background-color: #fff0f0;
+  border-color: #B81F24;
+}
+
+.role-text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+.role-item.active .role-text {
+  color: #B81F24;
+  font-weight: 600;
+}
+
+/* 登录按钮 */
+.login-btn {
+  width: 100%;
+  height: 88rpx;
+  background-color: #B81F24;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40rpx;
+}
+
+.btn-text {
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* 提示文字 */
+.tips {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.tips-text {
+  font-size: 22rpx;
+  color: #999;
+}

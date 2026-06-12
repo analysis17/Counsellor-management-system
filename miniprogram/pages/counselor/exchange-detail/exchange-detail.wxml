@@ -1,0 +1,61 @@
+<!--换班申请详情页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">换班申请</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 申请人信息 -->
+  <view class="info-card">
+    <view class="applicant-header">
+      <view class="applicant-avatar">
+        <text class="avatar-text">{{applicantInfo.name && applicantInfo.name.charAt(0) || '王'}}</text>
+      </view>
+      <view class="applicant-info">
+        <text class="applicant-name">{{applicantInfo.name || '王晓璐'}}</text>
+        <text class="applicant-id">{{applicantInfo.username || '2025030840'}}</text>
+        <text class="applicant-college">所在单位：{{applicantInfo.college || 'A学院'}}</text>
+      </view>
+      <view class="phone-icon-wrap" bindtap="callPhone">
+        <text class="phone-icon">☎</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 换班申请信息 -->
+  <view class="apply-card">
+    <text class="card-title">换班申请如下</text>
+    <view class="apply-info-item">
+      <text class="info-label">值班开始时间：</text>
+      <text class="info-value">{{applyInfo.startTime}}</text>
+    </view>
+    <view class="apply-info-item">
+      <text class="info-label">值班结束时间：</text>
+      <text class="info-value">{{applyInfo.endTime}}</text>
+    </view>
+    <view class="apply-info-item">
+      <text class="info-label">值班校区：</text>
+      <text class="info-value">{{applyInfo.campus}}</text>
+    </view>
+    <view class="apply-info-item">
+      <text class="info-label">值班住宿地址：</text>
+      <text class="info-value">{{applyInfo.address}}</text>
+    </view>
+  </view>
+
+  <!-- 换班理由 -->
+  <view class="reason-card">
+    <text class="reason-text">{{applyInfo.reason}}</text>
+  </view>
+
+  <!-- 同意换班按钮 -->
+  <view class="bottom-btn" bindtap="agreeExchange">同意换班</view>
+</view>

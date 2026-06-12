@@ -1,0 +1,82 @@
+<!--辅导员值班安排页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">值班安排</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 值班列表 -->
+  <view class="duty-list" wx:if="{{dutyList.length > 0}}">
+    <view class="duty-card" wx:for="{{dutyList}}" wx:key="id">
+      <view class="duty-date-header">
+        <text class="duty-date">{{item.dutyDate}}（{{item.weekDay}}）</text>
+        <text class="duty-type">{{item.type}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班开始时间：</text>
+        <text class="info-value">{{item.startTime}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班结束时间：</text>
+        <text class="info-value">{{item.endTime}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班校区：</text>
+        <text class="info-value">{{item.campus}}</text>
+      </view>
+      <view class="duty-info-item">
+        <text class="info-label">值班住宿地址：</text>
+        <text class="info-value">{{item.address}}</text>
+      </view>
+      <view class="duty-footer">
+        <view class="btn-exchange" bindtap="applyExchange" data-item="{{item}}">换班申请 ›</view>
+      </view>
+      <view class="duty-status-bar" wx:if="{{item.status === 'onDuty'}}">
+        <text class="status-icon">🔔</text>
+        <text class="status-text">正在值班中，紧急事情可以联系管理员操作换班</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{dutyList.length === 0}}">
+    <view class="empty-icon-wrap">
+      <view class="empty-icon">
+        <view class="icon-paper"></view>
+        <view class="icon-l">L</view>
+        <view class="icon-line"></view>
+      </view>
+    </view>
+    <text class="empty-text">暂无值班安排</text>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="tab-bar">
+    <view class="tab-bar-item active" bindtap="goToDuty">
+      <view class="tab-bar-icon-wrap active">
+        <text class="tab-bar-icon">📅</text>
+      </view>
+      <text class="tab-bar-text">值班安排</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToExchange">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📋</text>
+      </view>
+      <text class="tab-bar-text">换班申请</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToMore">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">▦</text>
+      </view>
+      <text class="tab-bar-text">更多功能</text>
+    </view>
+  </view>
+</view>
