@@ -1,0 +1,105 @@
+<!--管理员协助换班页面-->
+<view class="container">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back-icon">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">协助换班</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close-icon">×</text>
+    </view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <view class="search-bar">
+    <view class="search-input-wrap">
+      <text class="search-icon">🔍</text>
+      <input class="search-input" placeholder="搜索辅导员姓名/学号" value="{{keyword}}" bindinput="onSearchInput" />
+    </view>
+  </view>
+
+  <!-- 辅导员列表 -->
+  <view class="counselor-list" wx:if="{{counselorList.length > 0}}">
+    <view class="counselor-card" wx:for="{{counselorList}}" wx:key="id">
+      <view class="counselor-header">
+        <view class="counselor-avatar">
+          <text class="avatar-text">{{item.name && item.name.charAt(0) || '?'}}</text>
+        </view>
+        <view class="counselor-info">
+          <text class="counselor-name">{{item.name}}</text>
+          <text class="counselor-id">{{item.username}}</text>
+          <text class="counselor-college">所在单位：{{item.college}}</text>
+        </view>
+        <view class="phone-icon-wrap" bindtap="callPhone" data-phone="{{item.phone}}">
+          <text class="phone-icon">☎</text>
+        </view>
+      </view>
+
+      <!-- 值班详情 -->
+      <view class="duty-section">
+        <text class="section-title">下一次值班</text>
+        <view class="duty-detail-item">
+          <text class="detail-label">值班开始时间：</text>
+          <text class="detail-value">{{item.nextDuty.startTime}}</text>
+        </view>
+        <view class="duty-detail-item">
+          <text class="detail-label">值班结束时间：</text>
+          <text class="detail-value">{{item.nextDuty.endTime}}</text>
+        </view>
+        <view class="duty-detail-item">
+          <text class="detail-label">值班校区：</text>
+          <text class="detail-value">{{item.nextDuty.campus}}</text>
+        </view>
+        <view class="duty-detail-item">
+          <text class="detail-label">值班住宿地址：</text>
+          <text class="detail-value">{{item.nextDuty.address}}</text>
+        </view>
+        <view class="duty-status">
+          <text class="status-label">今日值班状态：</text>
+          <text class="status-value {{item.nextDuty.status === '未开始' ? 'status-pending' : 'status-on'}}">{{item.nextDuty.status}}</text>
+        </view>
+      </view>
+
+      <!-- 换班按钮 -->
+      <view class="exchange-footer">
+        <view 
+          class="exchange-btn {{exchangedIds.includes(item.id) ? 'exchanged' : ''}}" 
+          bindtap="{{exchangedIds.includes(item.id) ? '' : 'showExchangeModal'}}" 
+          data-id="{{item.id}}">
+          {{exchangedIds.includes(item.id) ? '已换班' : '协助换班'}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="empty" wx:if="{{counselorList.length === 0}}">
+    <text class="empty-icon">📭</text>
+    <text class="empty-text">暂无辅导员信息</text>
+  </view>
+
+  <!-- 底部导航 -->
+  <view class="tab-bar">
+    <view class="tab-bar-item" bindtap="goToDuty">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📅</text>
+      </view>
+      <text class="tab-bar-text">值班情况</text>
+    </view>
+    <view class="tab-bar-item active">
+      <view class="tab-bar-icon-wrap active">
+        <text class="tab-bar-icon">📋</text>
+      </view>
+      <text class="tab-bar-text">协助换班</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToMore">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">▦</text>
+      </view>
+      <text class="tab-bar-text">更多功能</text>
+    </view>
+  </view>
+</view>

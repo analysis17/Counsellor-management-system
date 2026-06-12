@@ -1,0 +1,72 @@
+<!--管理员换班历史页面-->
+<view class="container">
+  <view class="header">
+    <view class="header-left" bindtap="onBack">
+      <text class="header-back">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">换班安排记录</text>
+    </view>
+    <view class="header-right" bindtap="onClose">
+      <text class="header-close">×</text>
+    </view>
+  </view>
+
+  <!-- 时间筛选 -->
+  <view class="filter-bar">
+    <picker mode="selector" range="{{timeRanges}}" range-key="label" value="{{selectedRange}}" bindchange="onRangeChange">
+      <view class="filter-item">
+        <text class="filter-text">{{timeRanges[selectedRange] && timeRanges[selectedRange].label || '近一年'}}</text>
+        <text class="filter-arrow">▼</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 历史列表 -->
+  <view class="history-list">
+    <view class="history-card" wx:for="{{historyList}}" wx:key="id">
+      <view class="card-header">
+        <view class="counselor-info">
+          <view class="counselor-avatar">
+            <text class="avatar-text">{{item.userName && item.userName.charAt(0) || '?'}}</text>
+          </view>
+          <view class="counselor-detail">
+            <text class="counselor-name">{{item.userName}}</text>
+            <text class="counselor-id">{{item.userId}}</text>
+          </view>
+        </view>
+        <view class="phone-icon-wrap" bindtap="callPhone" data-phone="{{item.phone}}">
+          <text class="phone-icon">☎</text>
+        </view>
+      </view>
+
+      <view class="card-content">
+        <view class="detail-row">
+          <text class="detail-label">值班开始时间：</text>
+          <text class="detail-value">{{item.dutyStartTime}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">值班结束时间：</text>
+          <text class="detail-value">{{item.dutyEndTime}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">值班校区：</text>
+          <text class="detail-value">{{item.campus}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">值班住宿地址：</text>
+          <text class="detail-value">{{item.address}}</text>
+        </view>
+        <view class="detail-row">
+          <text class="detail-label">操作时间：</text>
+          <text class="detail-value">{{item.operationTime}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="empty" wx:if="{{historyList.length === 0}}">
+      <text class="empty-icon">📊</text>
+      <text class="empty-text">暂无换班记录</text>
+    </view>
+  </view>
+</view>

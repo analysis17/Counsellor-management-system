@@ -1,0 +1,55 @@
+<!--管理员更多功能页面-->
+<view class="container">
+  <view class="header">
+    <view class="header-left">
+      <text class="header-back" bindtap="onBack">‹</text>
+    </view>
+    <view class="header-center">
+      <text class="header-title">更多功能</text>
+    </view>
+    <view class="header-right">
+      <text class="header-close" bindtap="onClose">x</text>
+    </view>
+  </view>
+
+  <view class="function-list">
+    <view class="function-item" bindtap="goToRole">
+      <view class="function-icon">👤</view>
+      <view class="function-content">
+        <text class="function-title">角色切换</text>
+        <text class="function-desc">切换当前角色身份</text>
+      </view>
+      <view class="function-arrow">→</view>
+    </view>
+
+    <view class="function-item" bindtap="goToHistory">
+      <view class="function-icon">📊</view>
+      <view class="function-content">
+        <text class="function-title">换班历史</text>
+        <text class="function-desc">查看历史换班记录</text>
+      </view>
+      <view class="function-arrow">→</view>
+    </view>
+  </view>
+
+  <view class="tab-bar">
+    <view class="tab-bar-item" bindtap="goToDuty">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📅</text>
+      </view>
+      <text class="tab-bar-text">值班情况</text>
+    </view>
+    <view class="tab-bar-item" bindtap="goToAssist">
+      <view class="tab-bar-icon-wrap">
+        <text class="tab-bar-icon">📋</text>
+      </view>
+      <text class="tab-bar-text">协助换班</text>
+    </view>
+    <view class="tab-bar-item active">
+      <view class="tab-bar-icon-wrap active">
+        <text class="tab-bar-icon">▦</text>
+      </view>
+      <text class="tab-bar-text">更多功能</text>
+    </view>
+  </view>
+</view>

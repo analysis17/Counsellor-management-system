@@ -1,0 +1,293 @@
+/* 管理员协助换班页面样式 */
+.container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding-bottom: 140rpx;
+}
+
+/* 顶部导航 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60rpx 30rpx 30rpx;
+  background-color: #fff;
+}
+
+.header-left, .header-right {
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-back-icon, .header-close-icon {
+  font-size: 48rpx;
+  color: #333;
+}
+
+.header-center {
+  flex: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 34rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 搜索栏 */
+.search-bar {
+  padding: 20rpx 30rpx;
+  background-color: #fff;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8rpx;
+  padding: 0 20rpx;
+}
+
+.search-icon {
+  font-size: 28rpx;
+  margin-right: 16rpx;
+}
+
+.search-input {
+  flex: 1;
+  height: 80rpx;
+  font-size: 28rpx;
+}
+
+/* 辅导员列表 */
+.counselor-list {
+  padding: 30rpx;
+}
+
+/* 辅导员卡片 */
+.counselor-card {
+  background-color: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.counselor-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.counselor-avatar {
+  width: 88rpx;
+  height: 88rpx;
+  background-color: #B81F24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20rpx;
+}
+
+.avatar-text {
+  font-size: 36rpx;
+  color: #fff;
+  font-weight: 600;
+}
+
+.counselor-info {
+  flex: 1;
+}
+
+.counselor-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6rpx;
+}
+
+.counselor-id {
+  font-size: 24rpx;
+  color: #999;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.counselor-college {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.phone-icon-wrap {
+  width: 56rpx;
+  height: 56rpx;
+  background-color: #07C160;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-icon {
+  font-size: 28rpx;
+  color: #fff;
+}
+
+/* 值班详情 */
+.duty-section {
+  padding-left: 108rpx;
+  margin-bottom: 20rpx;
+}
+
+.section-title {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 16rpx;
+  padding-bottom: 16rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.duty-detail-item {
+  display: flex;
+  margin-bottom: 12rpx;
+}
+
+.detail-label {
+  font-size: 24rpx;
+  color: #999;
+  width: 180rpx;
+  flex-shrink: 0;
+}
+
+.detail-value {
+  font-size: 24rpx;
+  color: #333;
+  flex: 1;
+  word-break: break-all;
+}
+
+.duty-status {
+  display: flex;
+  align-items: center;
+  margin-top: 8rpx;
+}
+
+.status-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.status-value {
+  font-size: 24rpx;
+}
+
+.status-pending {
+  color: #999;
+}
+
+.status-on {
+  color: #B81F24;
+}
+
+/* 换班按钮 */
+.exchange-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exchange-btn {
+  padding: 16rpx 32rpx;
+  font-size: 26rpx;
+  color: #B81F24;
+  border: 1rpx solid #B81F24;
+  border-radius: 32rpx;
+}
+
+.exchange-btn.active {
+  background-color: #B81F24;
+  color: #fff;
+}
+
+.exchange-btn.exchanged {
+  background-color: #f0f0f0;
+  color: #999;
+  border-color: #ddd;
+}
+
+/* 空状态 */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 200rpx 0;
+}
+
+.empty-icon {
+  font-size: 100rpx;
+  margin-bottom: 20rpx;
+}
+
+.empty-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 底部导航 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background-color: #fff;
+  padding: 20rpx 0 60rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+}
+
+.tab-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-bar-icon-wrap {
+  width: 64rpx;
+  height: 64rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8rpx;
+}
+
+.tab-bar-icon-wrap.active {
+  background-color: #B81F24;
+  border-radius: 12rpx;
+}
+
+.tab-bar-icon {
+  font-size: 32rpx;
+}
+
+.tab-bar-icon-wrap.active .tab-bar-icon {
+  color: #fff;
+}
+
+.tab-bar-text {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.tab-bar-item.active .tab-bar-text {
+  color: #B81F24;
+}
