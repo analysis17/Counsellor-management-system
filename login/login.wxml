@@ -1,0 +1,68 @@
+<!--登录页面-->
+<view class="container">
+  <view class="logo-section">
+    <view class="logo">
+      <text class="logo-icon">📅</text>
+    </view>
+    <text class="logo-title">辅导员值班系统</text>
+    <text class="logo-subtitle">Faculty Duty System</text>
+  </view>
+
+  <view class="form-section">
+    <view class="form-item">
+      <text class="form-label">学号/工号</text>
+      <input 
+        class="form-input" 
+        placeholder="请输入学号或工号" 
+        value="{{username}}" 
+        bindinput="onUsernameInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">密码</text>
+      <input 
+        class="form-input" 
+        placeholder="请输入密码" 
+        type="password"
+        value="{{password}}" 
+        bindinput="onPasswordInput"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">角色</text>
+      <view class="role-group">
+        <view 
+          class="role-item {{role === 'COUNSELOR' ? 'active' : ''}}" 
+          bindtap="selectRole" 
+          data-role="COUNSELOR"
+        >
+          <text class="role-text">辅导员</text>
+        </view>
+        <view 
+          class="role-item {{role === 'COLLEGE' ? 'active' : ''}}" 
+          bindtap="selectRole" 
+          data-role="COLLEGE"
+        >
+          <text class="role-text">学院</text>
+        </view>
+        <view 
+          class="role-item {{role === 'ADMIN' ? 'active' : ''}}" 
+          bindtap="selectRole" 
+          data-role="ADMIN"
+        >
+          <text class="role-text">管理员</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="login-btn" bindtap="onLogin">
+      <text class="btn-text">登 录</text>
+    </view>
+
+    <view class="tips">
+      <text class="tips-text">管理员：admin/123456 | 辅导员：counselor1/123456 | 学院：college1/123456</text>
+    </view>
+  </view>
+</view>
